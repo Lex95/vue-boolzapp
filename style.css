@@ -27,7 +27,6 @@ main {
 nav.container-flex {
     flex-direction: column;
     width: 30%;
-    background-color: blue;
 }
 #personal-banner {
     height: 60px;
@@ -68,6 +67,7 @@ nav.container-flex {
 }
 .side-text {
     margin-left: 10px;
+
 }
 #notification-ad .side-text p {
     color: rgb(68, 67, 67);
@@ -75,4 +75,44 @@ nav.container-flex {
 }
 #notification-ad .side-text a {
     color: grey;
+}
+#search-bar {
+    height: 50px;
+    background-color: lightgray;
+    padding: 5px;
+}
+#search-bar > div {
+    background-color: white;
+    height: 40px;
+    width: 90%;
+    margin: auto;
+    border-radius: 20px;
+    align-items: center;
+}
+#search-bar > div > * {
+    margin-left: 10px;
+}
+#search-bar > div > input {
+    border: none;
+    width: 80%;
+}
+#contacts-list {
+    flex-grow: 1;
+    background-color: lightgray;
+}
+.no-style {
+    list-style: none;
+    width: 100%;
+}
+.contact {
+    height: 70px;
+    background-color: white;
+    border-bottom: 1px solid grey;
+    align-items: center;
+    padding: 10px;
+}
+.contact > img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
 }

@@ -12,7 +12,7 @@
     <title>Boolzap</title>
 </head>
 <body>
-    <main>
+    <main id="app">
         <div id="top-bar-main"></div>
         <div id="main-box" class="container-flex">
             <!-- barra a sinistra -->
@@ -35,8 +35,23 @@
                         <a href="#">Attiva notifiche desktop</a>
                     </div>
                 </div>
-                <div></div>
-                <div></div>
+                <div id="search-bar">
+                    <div class="container-flex">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    </div>
+                </div>
+                <div id="contacts-list" class="container-flex">
+                    <ul class="no-style">
+                        <li v-for="contact in usersList" class="contact container-flex">
+                            <img :src="contact.avatar" alt="">
+                            <div class="side-text">
+                                <p>{{contact.name}}</p>
+                                <p>placeholder</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </nav>
         </div>
     </main>
