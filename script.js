@@ -88,5 +88,16 @@ const app = new Vue ({
     data: {
         usersList: globalUsersList,
         activeChat: 0
+    },
+    methods: {
+        onContactClick(contact) {
+            this.activeChat = this.usersList.indexOf(contact)
+        },
+        isSent(message) {
+            return message.status == "sent"
+        },
+        isReceived(message) {
+            return message.status == "received"
+        }
     }
 })

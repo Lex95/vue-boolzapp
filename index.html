@@ -44,7 +44,7 @@
                 </div>
                 <div id="contacts-list" class="container-flex">
                     <ul class="no-style">
-                        <li v-for="contact in usersList" class="contact container-flex">
+                        <li v-for="contact in usersList" class="contact container-flex" @click="onContactClick(contact)">
                             <img :src="contact.avatar" alt="">
                             <div class="side-text">
                                 <p>{{contact.name}}</p>
@@ -71,13 +71,8 @@
                     </div>
                 </div>
                 <div id="chat" class="container-flex">
-                    <div class="message sent">
-                        asfad
-                        <div class="timestamp">12:00</div>
-                        <i class="fa fa-caret-up" aria-hidden="true"></i>
-                    </div>
-                    <div class="message received">
-                        asfad
+                    <div v-for="message in usersList[activeChat].messages" class="message" :class="{sent: isSent(message), received: isReceived(message)}">
+                        {{message.text}}
                         <div class="timestamp">12:00</div>
                         <i class="fa fa-caret-up" aria-hidden="true"></i>
                     </div>
