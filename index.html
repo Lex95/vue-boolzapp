@@ -17,9 +17,9 @@
         <div id="main-box" class="container-flex">
             <!-- barra a sinistra -->
             <nav class="container-flex">
-                <div id="personal-banner" class="container-flex">
+                <div class="personal-banner container-flex">
                     <img src="imgs/avatar_io.jpg" alt="">
-                    <div id="filler"></div>
+                    <div class="filler"></div>
                     <div class="icon-container">
                         <i class="fa fa-circle-o-notch" aria-hidden="true"></i>
                         <i class="fa fa-comment" aria-hidden="true"></i>
@@ -47,12 +47,29 @@
                             <img :src="contact.avatar" alt="">
                             <div class="side-text">
                                 <p>{{contact.name}}</p>
+                                <!-- non pesca l'ultimo messaggio -->
                                 <p>placeholder</p>
                             </div>
                         </li>
                     </ul>
                 </div>
             </nav>
+            <div id="chat-section">
+                <div class="personal-banner container-flex">
+                    <img :src="usersList[activeChat].avatar" alt="">
+                    <div class="side-text">
+                        <p>{{usersList[activeChat].name}}</p>
+                        <p>placeholder time</p>
+                    </div>
+                    <div class="filler"></div>
+                    <div class="icon-container">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                        <i class="fa fa-paperclip" aria-hidden="true"></i>
+                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                    </div>
+                </div>
+                
+            </div>
         </div>
     </main>
     <script src="script.js"></script>

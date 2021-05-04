@@ -86,6 +86,7 @@ const globalUsersList = [
 const app = new Vue ({
     el: "#app",
     data: {
-        usersList: globalUsersList
+        usersList: globalUsersList,
+        activeChat: 0
     }
 })

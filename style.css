@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 main {
-    background-image: url("imgs/mine.jpg");
+    background-color: #a7a5a5;
     width: 100%;
     height: 100vh;
 }
@@ -19,7 +19,6 @@ main {
     position: absolute;
     top: 5vh;
     left: 10vw;
-    background-color: red;
 }
 .container-flex {
     display: flex;
@@ -28,19 +27,19 @@ nav.container-flex {
     flex-direction: column;
     width: 30%;
 }
-#personal-banner {
+.personal-banner {
     height: 60px;
     padding: 5px;
     align-items: center;
     background-color: lightgray;
     border: 1px solid grey;
 }
-#personal-banner img {
+.personal-banner img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
 }
-#filler {
+.filler {
     flex-grow: 1;
 }
 .icon-container > * {
@@ -67,11 +66,14 @@ nav.container-flex {
 }
 .side-text {
     margin-left: 10px;
-
+    color: grey;
+}
+.side-text > p:first-child {
+    color: black;
+    font-weight: bold;
 }
 #notification-ad .side-text p {
     color: rgb(68, 67, 67);
-    font-weight: bold;
 }
 #notification-ad .side-text a {
     color: grey;
@@ -115,4 +117,8 @@ nav.container-flex {
     width: 50px;
     height: 50px;
     border-radius: 50%;
+}
+#chat-section {
+    width: 70%;
+    background-image: url("imgs/mine.jpg");
 }
