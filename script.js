@@ -98,6 +98,10 @@ const app = new Vue ({
         },
         isReceived(message) {
             return message.status == "received"
+        },
+        getTimestamp(message) {
+            const dateFromString = moment(message.date, "DD/MM/YYYY HH:mm:ss");
+            return dateFromString.format("HH:mm")
         }
     }
 })

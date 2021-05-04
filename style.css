@@ -58,7 +58,7 @@ nav.container-flex {
     border-radius: 50%;
     background-color: white;
     text-align: center;
-    /* stringendo la finestra si restringe ??? */
+    flex-shrink: 0;
 }
 #notification-icon > i {
     color: paleturquoise;
