@@ -78,24 +78,28 @@ nav.container-flex {
 #notification-ad .side-text a {
     color: grey;
 }
-#search-bar {
+.input-bar {
     height: 50px;
     background-color: lightgray;
     padding: 5px;
 }
 #search-bar > div {
-    background-color: white;
-    height: 40px;
     width: 90%;
     margin: auto;
+}
+.input-bar > div {
+    background-color: white;
+    height: 40px;
     border-radius: 20px;
     align-items: center;
 }
 #search-bar > div > * {
     margin-left: 10px;
 }
-#search-bar > div > input {
+.input-bar > div > input {
     border: none;
+}
+#search-bar > div > input {
     width: 80%;
 }
 #contacts-list {
@@ -119,6 +123,28 @@ nav.container-flex {
     border-radius: 50%;
 }
 #chat-section {
+    flex-direction: column;
     width: 70%;
     background-image: url("imgs/mine.jpg");
+}
+#chat {
+    flex-grow: 1;
+}
+#chat-section .input-bar {
+    align-items: center;
+    color: grey;
+    font-size: large;
+}
+#chat-section .input-bar > * {
+    margin-left: 20px;
+}
+#chat-section .input-bar > *:last-child {
+    margin-right: 20px;
+}
+#chat-section .input-bar > div {
+    flex-grow: 1;
+}
+#chat-section .input-bar input {
+    flex-grow: 1;
+    margin: 0 10px;
 }

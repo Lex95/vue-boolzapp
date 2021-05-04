@@ -35,7 +35,7 @@
                         <a href="#">Attiva notifiche desktop</a>
                     </div>
                 </div>
-                <div id="search-bar">
+                <div id="search-bar" class="input-bar">
                     <div class="container-flex">
                         <i class="fa fa-search" aria-hidden="true"></i>
                         <input type="text" placeholder="Cerca o inizia una nuova chat">
@@ -54,7 +54,8 @@
                     </ul>
                 </div>
             </nav>
-            <div id="chat-section">
+            <!-- chat a destra -->
+            <div id="chat-section" class="container-flex">
                 <div class="personal-banner container-flex">
                     <img :src="usersList[activeChat].avatar" alt="">
                     <div class="side-text">
@@ -68,7 +69,17 @@
                         <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                     </div>
                 </div>
-                
+                <div id="chat" class="container-flex">
+                    <!-- messaggi -->
+                </div>
+                <div class="input-bar container-flex">
+                    <i class="fa fa-smile-o" aria-hidden="true"></i>
+                    <div class="container-flex">
+                        <!-- da rivedere un po' di architettura, anche nel css -->
+                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    </div>
+                    <i class="fa fa-microphone" aria-hidden="true"></i>
+                </div>
             </div>
         </div>
     </main>
