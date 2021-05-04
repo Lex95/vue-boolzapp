@@ -58,6 +58,7 @@ nav.container-flex {
     border-radius: 50%;
     background-color: white;
     text-align: center;
+    /* stringendo la finestra si restringe ??? */
 }
 #notification-icon > i {
     color: paleturquoise;
@@ -129,7 +130,50 @@ nav.container-flex {
 }
 #chat {
     flex-grow: 1;
+    flex-direction: column;
+    padding: 20px;
 }
+.message {
+    padding: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: relative;
+}
+.sent {
+    background-color: lightgreen;
+    border-top-left-radius: 10px;
+    align-self: flex-end;
+}
+.received {
+    background-color: white;
+    border-top-right-radius: 10px;
+    align-self: flex-start;
+}
+.message .timestamp {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-size: small;
+}
+.timestamp {
+    color: grey;
+}
+.message i {
+    font-size: 25px;
+    position: absolute;
+    top: -10.5px;
+}
+.sent i {
+    right: -8px;
+    transform: rotate(-45deg);
+    color: lightgreen;
+}
+.received i {
+    left: -8px;
+    transform: rotate(45deg);
+    color: white;
+}
+
 #chat-section .input-bar {
     align-items: center;
     color: grey;
