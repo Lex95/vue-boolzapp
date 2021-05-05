@@ -22,6 +22,7 @@
         <div id="main-box" class="container-flex">
             <!-- barra a sinistra -->
             <nav class="container-flex">
+                <!-- banner utente -->
                 <div class="personal-banner container-flex">
                     <img src="imgs/avatar_io.jpg" alt="">
                     <div class="filler"></div>
@@ -31,6 +32,7 @@
                         <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                     </div>
                 </div>
+                <!-- ad per attivare le notifiche -->
                 <div id="notification-ad" class="container-flex">
                     <div id="notification-icon">
                         <i class="fa fa-bell-slash-o" aria-hidden="true"></i>
@@ -40,12 +42,14 @@
                         <a href="#">Attiva notifiche desktop</a>
                     </div>
                 </div>
+                <!-- barra di ricerca contatti -->
                 <div id="search-bar" class="input-bar">
                     <div class="container-flex">
                         <i class="fa fa-search" aria-hidden="true"></i>
                         <input type="text" v-model="query" placeholder="Cerca o inizia una nuova chat">
                     </div>
                 </div>
+                <!-- lista contatti -->
                 <div id="contacts-list" class="container-flex">
                     <ul class="no-style">
                         <li v-for="(contact, index) in filteredContacts" class="contact container-flex" :class="{active: index == activeChat}" @click="onContactClick(contact)">
@@ -61,8 +65,9 @@
                     </ul>
                 </div>
             </nav>
-            <!-- chat a destra -->
+            <!-- chat attiva a destra -->
             <div id="chat-section" class="container-flex">
+                <!-- banner interlocutore -->
                 <div class="personal-banner container-flex">
                     <img :src='"imgs/avatar" + usersList[activeChat].avatar + ".jpg"' alt="">
                     <div class="side-text">
@@ -76,6 +81,7 @@
                         <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                     </div>
                 </div>
+                <!-- finestra della chat -->
                 <div id="chat" class="container-flex">
                     <div v-for="message in usersList[activeChat].messages" class="message" :class="message.status">
                         {{message.text}}
@@ -91,6 +97,7 @@
                         </i>
                     </div>
                 </div>
+                <!-- barra degli input -->
                 <div class="input-bar container-flex">
                     <i class="fa fa-smile-o" aria-hidden="true"></i>
                     <div class="container-flex">

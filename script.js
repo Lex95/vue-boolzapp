@@ -92,11 +92,10 @@ const app = new Vue({
         query: "",
     },
     computed: {
-        // fare caso limite di quando non hai messaggi ricevuti per fixare il delete
         lastAccess() {
             const receivedMessages = this.usersList[this.activeChat].messages.filter((msg) => msg.status == "received");
             if (receivedMessages.length == 0) {
-                return ""
+                return "Mai visto sto qui"
             } else {
                 const lastMessageDate = receivedMessages[receivedMessages.length - 1];
                 return this.getTimestamp(lastMessageDate)

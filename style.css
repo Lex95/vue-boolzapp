@@ -30,6 +30,7 @@ nav.container-flex {
     flex-direction: column;
     width: 30%;
 }
+/* banner utente */
 .personal-banner {
     height: 60px;
     padding: 5px;
@@ -49,6 +50,7 @@ nav.container-flex {
     color: grey;
     margin-right: 10px;
 }
+/* ad per attivare le notifiche */
 #notification-ad {
     height: 100px;
     background-color: paleturquoise;
@@ -82,6 +84,7 @@ nav.container-flex {
 #notification-ad .side-text a {
     color: grey;
 }
+/* barra di ricerca contatti */
 .input-bar {
     height: 50px;
     background-color: lightgray;
@@ -107,9 +110,10 @@ nav.container-flex {
 #search-bar > div > input {
     width: 80%;
 }
+/* lista contatti */
 #contacts-list {
     flex-grow: 1;
-    overflow-y: hidden;
+    overflow-y: auto;
     background-color: lightgray;
 }
 .no-style {
@@ -133,15 +137,16 @@ nav.container-flex {
     background-color: rgb(238, 238, 238);
 }
 
-/* parte a destra */
+/* chat attiva a destra */
 #chat-section {
     flex-direction: column;
     width: 70%;
     background-image: url("imgs/mine.jpg");
 }
+/* finestra della chat */
 #chat {
     flex-grow: 1;
-    overflow-y: hidden;
+    overflow-y: auto;
     flex-direction: column;
     padding: 20px;
 }
@@ -212,7 +217,7 @@ nav.container-flex {
 .fa-chevron-down:focus .menu {
     display: block;
 }
-
+/* barra degli input */
 #chat-section .input-bar {
     align-items: center;
     color: grey;
@@ -223,6 +228,7 @@ nav.container-flex {
 }
 #chat-section .input-bar > *:last-child {
     margin-right: 20px;
+    width: 12px;
 }
 #chat-section .input-bar > div {
     flex-grow: 1;
