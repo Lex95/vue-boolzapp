@@ -41,12 +41,12 @@
                 <div id="search-bar" class="input-bar">
                     <div class="container-flex">
                         <i class="fa fa-search" aria-hidden="true"></i>
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input type="text" v-model="query" placeholder="Cerca o inizia una nuova chat">
                     </div>
                 </div>
                 <div id="contacts-list" class="container-flex">
                     <ul class="no-style">
-                        <li v-for="(contact, index) in usersList" class="contact container-flex" :class="{active: index == activeChat}" @click="onContactClick(contact)">
+                        <li v-for="(contact, index) in filteredContacts" class="contact container-flex" :class="{active: index == activeChat}" @click="onContactClick(contact)">
                             <img :src='"imgs/avatar" + contact.avatar + ".jpg"' alt="">
                             <div class="side-text">
                                 <p>{{contact.name}}</p>
@@ -81,8 +81,7 @@
                 <div class="input-bar container-flex">
                     <i class="fa fa-smile-o" aria-hidden="true"></i>
                     <div class="container-flex">
-                        <!-- da rivedere un po' di architettura, anche nel css -->
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input type="text" v-model="newMessage" @keyup.enter="sendMessage">
                     </div>
                     <i class="fa fa-microphone" aria-hidden="true"></i>
                 </div>
