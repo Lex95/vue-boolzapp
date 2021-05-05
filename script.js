@@ -101,7 +101,7 @@ const app = new Vue ({
             return this.getTimestamp(lastMessageDate)
         },
         filteredContacts() {
-            return this.usersList.filter(element => element.name.includes(this.query))
+            return this.usersList.filter(element => element.name.toLowerCase().includes(this.query.toLowerCase()))
         }
     },
     methods: {
@@ -113,7 +113,11 @@ const app = new Vue ({
             return dateFromString.format("HH:mm")
         },
         lastMessage(contact) {
-            return contact.messages[contact.messages.length - 1].text
+            if (contact.messages == null) {
+                return "Non ci sono ancora messaggi"
+            } else {
+                return contact.messages[contact.messages.length - 1].text
+            }
         },
         sendMessage() {
             if (this.newMessage != "") {
@@ -124,7 +128,8 @@ const app = new Vue ({
                 });
                 this.newMessage = "";
                 // funzione che risponde dopo 1s
-                setTimeout(() => this.usersList[this.activeChat].messages.push({
+                setTimeout(() => 
+                this.usersList[this.activeChat].messages.push({
                     date: moment().format("DD/MM/YYYY HH:mm:ss"),
                     text: "ok",
                     status: "received"
