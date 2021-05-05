@@ -47,11 +47,10 @@
                 <div id="contacts-list" class="container-flex">
                     <ul class="no-style">
                         <li v-for="(contact, index) in usersList" class="contact container-flex" :class="{active: index == activeChat}" @click="onContactClick(contact)">
-                            <img :src="contact.avatar" alt="">
+                            <img :src='"imgs/avatar" + contact.avatar + ".jpg"' alt="">
                             <div class="side-text">
                                 <p>{{contact.name}}</p>
-                                <!-- non pesca l'ultimo messaggio -->
-                                <p>placeholder</p>
+                                <p>{{lastMessage(contact)}}</p>
                             </div>
                         </li>
                     </ul>
@@ -60,10 +59,10 @@
             <!-- chat a destra -->
             <div id="chat-section" class="container-flex">
                 <div class="personal-banner container-flex">
-                    <img :src="usersList[activeChat].avatar" alt="">
+                    <img :src='"imgs/avatar" + usersList[activeChat].avatar + ".jpg"' alt="">
                     <div class="side-text">
                         <p>{{usersList[activeChat].name}}</p>
-                        <p>placeholder time</p>
+                        <p>{{lastAccess}}</p>
                     </div>
                     <div class="filler"></div>
                     <div class="icon-container">
@@ -73,7 +72,7 @@
                     </div>
                 </div>
                 <div id="chat" class="container-flex">
-                    <div v-for="message in usersList[activeChat].messages" class="message" :class="{sent: isSent(message), received: isReceived(message)}">
+                    <div v-for="message in usersList[activeChat].messages" class="message" :class="message.status">
                         {{message.text}}
                         <div class="timestamp">{{getTimestamp(message)}}</div>
                         <i class="fa fa-caret-up" aria-hidden="true"></i>

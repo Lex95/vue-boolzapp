@@ -102,12 +102,14 @@ nav.container-flex {
 }
 .input-bar > div > input {
     border: none;
+    outline: none;
 }
 #search-bar > div > input {
     width: 80%;
 }
 #contacts-list {
     flex-grow: 1;
+    overflow-y: hidden;
     background-color: lightgray;
 }
 .no-style {
@@ -138,6 +140,7 @@ nav.container-flex {
 }
 #chat {
     flex-grow: 1;
+    overflow-y: hidden;
     flex-direction: column;
     padding: 20px;
 }
@@ -162,7 +165,7 @@ nav.container-flex {
     position: absolute;
     bottom: 5px;
     right: 5px;
-    font-size: small;
+    font-size: 10px;
 }
 .timestamp {
     color: grey;

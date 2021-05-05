@@ -1,7 +1,7 @@
 const globalUsersList = [
     {
         name: 'Michele',
-        avatar: 'imgs/avatar_1.jpg',
+        avatar: '_1',
         visible: true,
         messages: [
             {
@@ -23,7 +23,7 @@ const globalUsersList = [
     },
     {
         name: 'Fabio',
-        avatar: 'imgs/avatar_2.jpg',
+        avatar: '_2',
         visible: true,
         messages: [
             {
@@ -44,7 +44,7 @@ const globalUsersList = [
         ],
     }, {
         name: 'Samuele',
-        avatar: 'imgs/avatar_3.jpg',
+        avatar: '_3',
         visible: true,
         messages: [
             {
@@ -66,7 +66,7 @@ const globalUsersList = [
     },
     {
         name: 'Luisa',
-        avatar: 'imgs/avatar_4.jpg',
+        avatar: '_4',
         visible: true,
         messages: [
             {
@@ -89,19 +89,26 @@ const app = new Vue ({
         usersList: globalUsersList,
         activeChat: 0
     },
+    computed: {
+        lastAccess() {
+            if (!this.usersList[this.activeChat].messages) {
+                return "";
+            };
+            const receivedMessages = this.usersList[this.activeChat].messages.filter((msg) => msg.status == "received");
+            const lastMessageDate = receivedMessages[receivedMessages.length - 1];
+            return this.getTimestamp(lastMessageDate)
+        }
+    },
     methods: {
         onContactClick(contact) {
             this.activeChat = this.usersList.indexOf(contact)
         },
-        isSent(message) {
-            return message.status == "sent"
-        },
-        isReceived(message) {
-            return message.status == "received"
-        },
         getTimestamp(message) {
             const dateFromString = moment(message.date, "DD/MM/YYYY HH:mm:ss");
             return dateFromString.format("HH:mm")
+        },
+        lastMessage(contact) {
+            return contact.messages[contact.messages.length - 1].text
         }
     }
 })
