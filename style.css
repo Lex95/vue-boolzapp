@@ -3,15 +3,18 @@
     padding: 0;
     box-sizing: border-box;
 }
+html {
+    font-family: Helvetica, Arial, sans-serif;
+}
 main {
-    background-color: #a7a5a5;
+    background-color: rgb(218,219,212);
     width: 100%;
     height: 100vh;
 }
 #top-bar-main {
     width: 100%;
     height: 20%;
-    background-color: darkcyan;
+    background-color: rgb(0,150,136);
 }
 #main-box {
     width: 80vw;
@@ -19,14 +22,20 @@ main {
     position: absolute;
     top: 5vh;
     left: 10vw;
+    box-shadow: 1px 1px 5px grey;
 }
 .container-flex {
     display: flex;
 }
-nav {
-    border-right: 1px solid grey;
+.clickable {
+    cursor: pointer;
 }
-nav.container-flex {
+i.clickable:hover {
+    transform: scale(1.2);
+}
+/* barra a sinistra */
+nav {
+    border-right: 1px solid rgb(223,223,223);
     flex-direction: column;
     width: 30%;
 }
@@ -35,8 +44,7 @@ nav.container-flex {
     height: 60px;
     padding: 5px;
     align-items: center;
-    background-color: lightgray;
-    border-bottom: 1px solid grey;
+    background-color: rgb(237,237,237);
 }
 .personal-banner img {
     width: 50px;
@@ -47,7 +55,7 @@ nav.container-flex {
     flex-grow: 1;
 }
 .icon-container > * {
-    color: grey;
+    color: rgb(145,145,145);
     margin-right: 10px;
 }
 /* ad per attivare le notifiche */
@@ -87,7 +95,7 @@ nav.container-flex {
 /* barra di ricerca contatti */
 .input-bar {
     height: 50px;
-    background-color: lightgray;
+    background-color: rgb(246,246,246);
     padding: 5px;
 }
 #search-bar > div {
@@ -123,7 +131,7 @@ nav.container-flex {
 .contact {
     height: 70px;
     background-color: white;
-    border-top: 1px solid grey;
+    border-top: 1px solid rgb(223,223,223);
     align-items: center;
     padding: 10px;
     position: relative;
@@ -134,7 +142,10 @@ nav.container-flex {
     border-radius: 50%;
 }
 .active {
-    background-color: rgb(238, 238, 238);
+    background-color: rgb(235,235,235);
+}
+.contact:hover {
+    background-color: rgb(245,245,245);
 }
 
 /* chat attiva a destra */
@@ -155,10 +166,11 @@ nav.container-flex {
     margin: 5px 0;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    box-shadow: 1px 1px 5px lightgray;
     position: relative;
 }
 .sent {
-    background-color: lightgreen;
+    background-color: rgb(220,248,198);
     border-top-left-radius: 10px;
     align-self: flex-end;
 }
@@ -182,7 +194,7 @@ nav.container-flex {
 .sent .fa-caret-up {
     right: -8px;
     transform: rotate(-45deg);
-    color: lightgreen;
+    color: rgb(220,248,198);
 }
 .received .fa-caret-up {
     left: -8px;
@@ -201,9 +213,8 @@ nav.container-flex {
 .menu {
     width: 110px;
     background-color: white;
-    border: 1px solid lightgray;
     border-radius: 5px;
-    box-shadow: 2px 2px 10px grey;
+    box-shadow: 1px 1px 5px grey;
     position: absolute;
     top: 5px;
     right: 5px;
@@ -213,6 +224,13 @@ nav.container-flex {
 .menu li {
     padding: 10px;
     font-size: 12px;
+    border-radius: 5px;
+}
+.menu li:hover {
+    background-color: rgb(245,245,245);
+}
+.fa-chevron-down {
+    cursor: pointer;
 }
 .fa-chevron-down:focus .menu {
     display: block;
@@ -220,7 +238,7 @@ nav.container-flex {
 /* barra degli input */
 #chat-section .input-bar {
     align-items: center;
-    color: grey;
+    color: rgb(145,145,145);
     font-size: large;
 }
 #chat-section .input-bar > * {

@@ -27,9 +27,9 @@
                     <img src="imgs/avatar_io.jpg" alt="">
                     <div class="filler"></div>
                     <div class="icon-container">
-                        <i class="fa fa-circle-o-notch" aria-hidden="true"></i>
-                        <i class="fa fa-comment" aria-hidden="true"></i>
-                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                        <i class="fa fa-circle-o-notch clickable" aria-hidden="true"></i>
+                        <i class="fa fa-comment clickable" aria-hidden="true"></i>
+                        <i class="fa fa-ellipsis-v clickable" aria-hidden="true"></i>
                     </div>
                 </div>
                 <!-- ad per attivare le notifiche -->
@@ -52,7 +52,7 @@
                 <!-- lista contatti -->
                 <div id="contacts-list" class="container-flex">
                     <ul class="no-style">
-                        <li v-for="(contact, index) in filteredContacts" class="contact container-flex" :class="{active: index == activeChat}" @click="onContactClick(contact)">
+                        <li v-for="(contact, index) in filteredContacts" class="contact container-flex clickable" :class="{active: index == activeChat}" @click="onContactClick(contact)">
                             <img :src='"imgs/avatar" + contact.avatar + ".jpg"' alt="">
                             <div class="side-text">
                                 <p>{{contact.name}}</p>
@@ -76,9 +76,9 @@
                     </div>
                     <div class="filler"></div>
                     <div class="icon-container">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                        <i class="fa fa-paperclip" aria-hidden="true"></i>
-                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                        <i class="fa fa-search clickable" aria-hidden="true"></i>
+                        <i class="fa fa-paperclip clickable" aria-hidden="true"></i>
+                        <i class="fa fa-ellipsis-v clickable" aria-hidden="true"></i>
                     </div>
                 </div>
                 <!-- finestra della chat -->
@@ -99,11 +99,11 @@
                 </div>
                 <!-- barra degli input -->
                 <div class="input-bar container-flex">
-                    <i class="fa fa-smile-o" aria-hidden="true"></i>
+                    <i class="fa fa-smile-o clickable" aria-hidden="true"></i>
                     <div class="container-flex">
                         <input type="text" v-model="newMessage" @keyup.enter="sendMessage">
                     </div>
-                    <i class="fa" :class="newMessage != '' ? 'fa-paper-plane' : 'fa-microphone'" @click="onClickSend(newMessage)" aria-hidden="true"></i>
+                    <i class="fa clickable" :class="newMessage != '' ? 'fa-paper-plane' : 'fa-microphone'" @click="onClickSend(newMessage)" aria-hidden="true"></i>
                 </div>
             </div>
         </div>
