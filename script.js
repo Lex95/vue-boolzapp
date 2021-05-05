@@ -110,14 +110,16 @@ const app = new Vue({
             this.activeChat = this.usersList.indexOf(contact)
         },
         getTimestamp(message) {
-            if (message) {
+            if (message && message.text != 'Non ci sono messaggi!') {
                 const dateFromString = moment(message.date, "DD/MM/YYYY HH:mm:ss");
                 return dateFromString.format("HH:mm")
             } else return ""
         },
         lastMessage(contact) {
             if (contact.messages.length == 0) {
-                return ""
+                return {
+                    text: 'Non ci sono messaggi!'
+                }
             } else {
                 return contact.messages[contact.messages.length - 1]
             }
