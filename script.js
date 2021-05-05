@@ -116,7 +116,7 @@ const app = new Vue ({
             if (contact.messages == null) {
                 return "Non ci sono ancora messaggi"
             } else {
-                return contact.messages[contact.messages.length - 1].text
+                return contact.messages[contact.messages.length - 1]
             }
         },
         sendMessage() {

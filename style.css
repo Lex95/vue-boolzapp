@@ -122,6 +122,7 @@ nav.container-flex {
     border-top: 1px solid grey;
     align-items: center;
     padding: 10px;
+    position: relative;
 }
 .contact > img {
     width: 50px;
@@ -161,14 +162,12 @@ nav.container-flex {
     border-top-right-radius: 10px;
     align-self: flex-start;
 }
-.message .timestamp {
+.timestamp {
+    color: grey;
     position: absolute;
     bottom: 5px;
     right: 5px;
     font-size: 10px;
-}
-.timestamp {
-    color: grey;
 }
 .message i {
     font-size: 25px;

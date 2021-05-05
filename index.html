@@ -50,8 +50,9 @@
                             <img :src='"imgs/avatar" + contact.avatar + ".jpg"' alt="">
                             <div class="side-text">
                                 <p>{{contact.name}}</p>
-                                <p>{{lastMessage(contact)}}</p>
+                                <p>{{lastMessage(contact).text}}</p>
                             </div>
+                            <div class="timestamp">{{getTimestamp(lastMessage(contact))}}</div>
                         </li>
                     </ul>
                 </div>
