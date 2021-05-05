@@ -169,20 +169,48 @@ nav.container-flex {
     right: 5px;
     font-size: 10px;
 }
-.message i {
+.message .fa-caret-up {
     font-size: 25px;
     position: absolute;
     top: -10.5px;
 }
-.sent i {
+.sent .fa-caret-up {
     right: -8px;
     transform: rotate(-45deg);
     color: lightgreen;
 }
-.received i {
+.received .fa-caret-up {
     left: -8px;
     transform: rotate(45deg);
     color: white;
+}
+.message .fa-chevron-down {
+    position: absolute;
+    font-size: 10px;
+    top: 10px;
+    display: none;
+}
+.message:hover .fa-chevron-down {
+    display: inline;
+}
+.menu {
+    width: 110px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px grey;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 2;
+    display: none;
+}
+.menu li {
+    padding: 10px;
+    font-size: 12px;
+}
+.fa-chevron-down:focus .menu {
+    display: block;
 }
 
 #chat-section .input-bar {

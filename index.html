@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- vue -->
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <!-- moment.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
     <!-- fontawesome -->
@@ -14,6 +15,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Boolzap</title>
 </head>
+
 <body>
     <main id="app">
         <div id="top-bar-main"></div>
@@ -52,7 +54,9 @@
                                 <p>{{contact.name}}</p>
                                 <p>{{lastMessage(contact).text}}</p>
                             </div>
-                            <div class="timestamp">{{getTimestamp(lastMessage(contact))}}</div>
+                            <div v-if="getTimestamp(lastMessage(contact)) != ''" class="timestamp">
+                                {{getTimestamp(lastMessage(contact))}}
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -77,6 +81,14 @@
                         {{message.text}}
                         <div class="timestamp">{{getTimestamp(message)}}</div>
                         <i class="fa fa-caret-up" aria-hidden="true"></i>
+                        <i class="fa fa-chevron-down" tabindex="-1" aria-hidden="true">
+                            <div class="menu container-flex">
+                                <ul class="no-style">
+                                    <li @click="messageInfo(message)">Message info</li>
+                                    <li @click="deleteMessage(message)">Delete message</li>
+                                </ul>
+                            </div>
+                        </i>
                     </div>
                 </div>
                 <div class="input-bar container-flex">
@@ -84,11 +96,12 @@
                     <div class="container-flex">
                         <input type="text" v-model="newMessage" @keyup.enter="sendMessage">
                     </div>
-                    <i class="fa fa-microphone" aria-hidden="true"></i>
+                    <i class="fa" :class="newMessage != '' ? 'fa-paper-plane' : 'fa-microphone'" @click="onClickSend(newMessage)" aria-hidden="true"></i>
                 </div>
             </div>
         </div>
     </main>
     <script src="script.js"></script>
 </body>
+
 </html>
