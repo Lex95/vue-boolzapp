@@ -123,8 +123,13 @@ const app = new Vue ({
                     status: "sent"
                 });
                 this.newMessage = "";
+                // funzione che risponde dopo 1s
+                setTimeout(() => this.usersList[this.activeChat].messages.push({
+                    date: moment().format("DD/MM/YYYY HH:mm:ss"),
+                    text: "ok",
+                    status: "received"
+                }), 1000)
             }
         }
-        // funzione che risponde dopo 1s
     }
 })
