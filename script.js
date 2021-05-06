@@ -98,7 +98,7 @@ const app = new Vue({
                 return "Mai visto sto qui"
             } else {
                 const lastMessageDate = receivedMessages[receivedMessages.length - 1];
-                return this.getTimestamp(lastMessageDate)
+                return "Ultimo accesso alle " + this.getTimestamp(lastMessageDate)
             }
         },
         filteredContacts() {
@@ -133,13 +133,16 @@ const app = new Vue({
                 });
                 this.newMessage = "";
                 const temp = this.activeChat;
+                this.scrollToBottom();
                 // funzione che risponde dopo 1s
-                setTimeout(() =>
+                setTimeout(() => {
                     this.usersList[temp].messages.push({
                         date: moment().format("DD/MM/YYYY HH:mm:ss"),
                         text: "ok",
                         status: "received"
-                    }), 1000)
+                    });
+                    this.scrollToBottom()
+                }, 1000)
             }
         },
         getSender(message) {
@@ -163,6 +166,16 @@ Contenuto: ${message.text}`
             } else {
                 this.sendMessage()
             }
+        },
+        scrollToBottom() {
+            this.$nextTick(() => {
+                const htmlElement = this.$refs.chatContainerToScroll;
+                htmlElement.scrollTop = htmlElement.scrollHeight;
+            })
+
+        },
+        clearQuery() {
+            this.query = ""
         }
     }
 })

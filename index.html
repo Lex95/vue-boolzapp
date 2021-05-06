@@ -47,6 +47,7 @@
                     <div class="container-flex">
                         <i class="fa fa-search" aria-hidden="true"></i>
                         <input type="text" v-model="query" placeholder="Cerca o inizia una nuova chat">
+                        <i class="fa fa-times-circle clickable" v-if="query" @click="clearQuery()" aria-hidden="true"></i>
                     </div>
                 </div>
                 <!-- lista contatti -->
@@ -82,9 +83,9 @@
                     </div>
                 </div>
                 <!-- finestra della chat -->
-                <div id="chat" class="container-flex">
+                <div id="chat" class="container-flex" ref="chatContainerToScroll">
                     <div v-for="message in usersList[activeChat].messages" class="message" :class="message.status">
-                        {{message.text}}
+                        <p>{{message.text}}</p>
                         <div class="timestamp">{{getTimestamp(message)}}</div>
                         <i class="fa fa-caret-up" aria-hidden="true"></i>
                         <i class="fa fa-chevron-down" tabindex="-1" aria-hidden="true">
@@ -109,8 +110,6 @@
         </div>
     </main>
     <script src="script.js"></script>
-    <!-- ancora da fixare i bug di overflow orizzontale nella chat
-     -->
 </body>
 
 </html>
