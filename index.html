@@ -89,7 +89,7 @@
                         <div class="timestamp">{{getTimestamp(message)}}</div>
                         <i class="fa fa-caret-up" aria-hidden="true"></i>
                         <i class="fa fa-chevron-down" tabindex="-1" aria-hidden="true">
-                            <div class="menu container-flex">
+                            <div class="menu container-flex" :class="message.status">
                                 <ul class="no-style">
                                     <li @click="messageInfo(message)">Message info</li>
                                     <li @click="deleteMessage(message)">Delete message</li>

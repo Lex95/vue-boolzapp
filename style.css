@@ -84,6 +84,10 @@ nav {
     color: black;
     font-weight: bold;
 }
+.side-text > p:last-child {
+    font-size: 13px;
+    overflow: hidden;
+}
 #notification-ad .side-text p {
     color: rgb(68, 67, 67);
 }
@@ -174,12 +178,12 @@ nav {
 .message p {
     word-wrap: break-word;
 }
-.sent {
+.message.sent {
     background-color: rgb(220,248,198);
     border-top-left-radius: 10px;
     align-self: flex-end;
 }
-.received {
+.message.received {
     background-color: white;
     border-top-right-radius: 10px;
     align-self: flex-start;
@@ -223,9 +227,14 @@ nav {
     box-shadow: 1px 1px 5px grey;
     position: absolute;
     top: 5px;
-    right: 5px;
     z-index: 2;
     display: none;
+}
+.menu.sent {
+    right: 5px;
+}
+.menu.received {
+    left: 5px;
 }
 .menu li {
     padding: 10px;

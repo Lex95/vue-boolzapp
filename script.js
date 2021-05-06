@@ -98,7 +98,7 @@ const app = new Vue({
                 return "Mai visto sto qui"
             } else {
                 const lastMessageDate = receivedMessages[receivedMessages.length - 1];
-                return "Ultimo accesso alle " + this.getTimestamp(lastMessageDate)
+                return "Ultimo accesso oggi alle " + this.getTimestamp(lastMessageDate)
             }
         },
         filteredContacts() {
