@@ -100,7 +100,12 @@
                 </div>
                 <!-- barra degli input -->
                 <div class="input-bar container-flex">
-                    <i class="fa fa-smile-o clickable" aria-hidden="true"></i>
+                    <i class="fa fa-smile-o" tabindex="-1" aria-hidden="true">
+                        <!-- bonus emote -->
+                        <div class="emote-menu container-flex">
+                            <div v-for="(emote, index) in emoteList" class="emote" @click="onEmoteClick(emote)">{{emoteList[index].content}}</div>
+                        </div>
+                    </i>
                     <div class="container-flex">
                         <input type="text" v-model="newMessage" @keyup.enter="sendMessage">
                     </div>

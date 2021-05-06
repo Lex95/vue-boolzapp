@@ -5,6 +5,7 @@ const app = new Vue({
         activeChat: 0,
         newMessage: "",
         query: "",
+        emoteList: emoteListGraphic
     },
     computed: {
         lastAccess() {
@@ -91,6 +92,10 @@ Contenuto: ${message.text}`
         },
         clearQuery() {
             this.query = ""
+        },
+        // bonus emote
+        onEmoteClick(emote) {
+            this.newMessage += emote.content
         }
     }
 })
