@@ -165,3 +165,86 @@ const emoteListGraphic = [
         content: "👀"
     }
 ]
+
+const emoteListClassic = [
+    {
+        id: 1,
+        content: ":)"
+    },
+    {
+        id: 2,
+        content: "xD"
+    },
+    {
+        id: 3,
+        content: ":O"
+    },
+    {
+        id: 4,
+        content: ":D"
+    },
+    {
+        id: 5,
+        content: "xO"
+    },
+    {
+        id: 6,
+        content: "8)"
+    },
+    {
+        id: 7,
+        content: "c:"
+    },
+    {
+        id: 8,
+        content: ":c"
+    },
+    {
+        id: 9,
+        content: "D:"
+    },
+    {
+        id: 10,
+        content: ":("
+    },
+    {
+        id: 11,
+        content: ">:("
+    },
+    {
+        id: 12,
+        content: ":P"
+    },
+    {
+        id: 13,
+        content: ";)"
+    },
+    {
+        id: 14,
+        content: ";)"
+    },
+    {
+        id: 15,
+        content: ":^)"
+    },
+    {
+        id: 16,
+        content: "=)"
+    },
+    {
+        id: 17,
+        content: ":|"
+    },
+    {
+        id: 18,
+        content: ":'("
+    },
+    {
+        id: 19,
+        content: ":/"
+    },
+    {
+        id: 20,
+        content: ":')"
+    }
+]

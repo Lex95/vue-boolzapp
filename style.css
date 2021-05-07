@@ -211,6 +211,7 @@ nav {
     color: white;
 }
 .message .fa-chevron-down {
+    color: grey;
     position: absolute;
     font-size: 10px;
     top: 10px;
@@ -229,6 +230,7 @@ nav {
     top: 5px;
     z-index: 2;
     display: none;
+    overflow: hidden;
 }
 .menu.sent {
     right: 5px;
@@ -239,7 +241,6 @@ nav {
 .menu li {
     padding: 10px;
     font-size: 12px;
-    border-radius: 5px;
 }
 .menu li:hover {
     background-color: rgb(245,245,245);
@@ -281,6 +282,7 @@ nav {
     border-radius: 5px;
     box-shadow: 1px 1px 5px grey;
     flex-wrap: wrap;
+    overflow: hidden;
 }
 .emote {
     display: inline-block;
@@ -288,6 +290,10 @@ nav {
     padding: 10px 5px 0 5px;
     width: 30px;
     height: 30px;
+    text-align: center;
+}
+.emote:hover {
+    background-color: paleturquoise;
 }
 .fa-smile-o {
     cursor: pointer;

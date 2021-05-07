@@ -6,6 +6,7 @@ const app = new Vue({
         newMessage: "",
         query: "",
         emoteList: emoteListGraphic
+        // non sono sicuro che queste emote funzionino per ogni browser e sistema operativo, nel caso cambiare con emoteListGraphic con emoteListClassic
     },
     computed: {
         lastAccess() {
